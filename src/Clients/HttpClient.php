@@ -17,10 +17,6 @@ class HttpClient
             $api_key = $_ENV['WALLETAPP_API_KEY'];
         }
 
-        if($api_key == null) {
-            throw new \Exception('API key is required');
-        }
-
         $this->httpClient = $client ?? new GuzzleClient([    
         'headers' => [
             'Content-Type' => 'Application/json',
