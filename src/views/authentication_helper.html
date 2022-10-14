@@ -87,7 +87,7 @@ composer require walletapp/php-sdk
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Brands;
+use WalletApp\Support\Clients\Brands;
 $brands = new Brands('YOUR_API_KEY');
 
 // submit your request
@@ -138,7 +138,7 @@ $brands = new Brands('YOUR_API_KEY');
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Authentication;
+use WalletApp\Support\Clients\Authentication;
 $auth = new Authentication();
 
 // login the user
@@ -153,7 +153,7 @@ $auth->login(['email' => '<email>', 'password' => '<password>']);
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Authentication;
+use WalletApp\Support\Clients\Authentication;
 $auth = new Authentication();
 
 // request a token
@@ -167,7 +167,7 @@ $auth->token(['email' => '<email>', 'password' => '<password>', 'permissions' =>
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Authentication;
+use WalletApp\Support\Clients\Authentication;
 $auth = new Authentication();
 
 // fetch your scopes
@@ -214,7 +214,7 @@ $auth->scopes();
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Brands;
+use WalletApp\Support\Clients\Brands;
 $brands = new Brands();
 
 // fetch your brands
@@ -266,7 +266,7 @@ $brands->get();
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Members;
+use WalletApp\Support\Clients\Members;
 $members = new Members();
 
 // set the brand
@@ -281,7 +281,7 @@ $members->brand('brand_id')->search();
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Members;
+use WalletApp\Support\Clients\Members;
 $members = new Members();
 
 // search for a member
@@ -296,7 +296,7 @@ $members->brand('brand_id')->search(['email' => '<email>']);
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Members;
+use WalletApp\Support\Clients\Members;
 $members = new Members();
 
 // fetch the import logs
@@ -311,7 +311,7 @@ $members->brand('brand_id')->logs();
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Members;
+use WalletApp\Support\Clients\Members;
 
 $members = new Members();
 // export the members
@@ -327,7 +327,7 @@ $members->brand('brand_id')->export(['storecard' => '<storecard>']);
 <pre>
 <code class="language-php">
 // Your php file
-use Clients\Members;
+use WalletApp\Support\Clients\Members;
 
 $members = new Members();
 
