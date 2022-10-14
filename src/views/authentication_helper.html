@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet"    
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Wallet App | SDK documentation</title>
+    <script>hljs.highlightAll();</script>
+</head>
+<body class="bg-gray-50">
+    <div class="relative overflow-hidden bg-gray-50">
+        <div class="hidden sm:absolute sm:inset-y-0 sm:block sm:h-full sm:w-full" aria-hidden="true">
+          <div class="relative mx-auto h-full max-w-7xl">
+            <svg class="absolute right-full translate-y-1/4 translate-x-1/4 transform lg:translate-x-1/2" width="404" height="784" fill="none" viewBox="0 0 404 784">
+              <defs>
+                <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                </pattern>
+              </defs>
+              <rect width="404" height="784" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+            </svg>
+            <svg class="absolute left-full -translate-y-3/4 -translate-x-1/4 transform md:-translate-y-1/2 lg:-translate-x-1/2" width="404" height="784" fill="none" viewBox="0 0 404 784">
+              <defs>
+                <pattern id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                </pattern>
+              </defs>
+              <rect width="404" height="784" fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
+            </svg>
+          </div>
+        </div>
+      
+        <div class="relative pt-6 pb-16 sm:pb-24">
+          <main class="mx-auto mt-16 max-w-7xl px-4 sm:mt-24">
+            <div class="text-center">
+              <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="block xl:inline">Wallet App php sdk</span>
+                <span class="block text-indigo-600 xl:inline">Integrate with ease</span>
+              </h1>
+              <p class="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">This page contains the documentation for the Wallet App php software development kit</p>
+            </div>
+          </main>
+        </div>
+      </div>
+      <div class="max-w-4xl rounded-lg shadow mx-auto bg-white">
+            <div x-data="{ active: 1 }" class="mx-auto max-w-4xl w-full min-h-[16rem] space-y-4">
+                <div x-data="{
+                    id: 1,
+                    get expanded() {
+                        return this.active === this.id
+                    },
+                    set expanded(value) {
+                        this.active = value ? this.id : null
+                    },
+                }" role="region" class="bg-white">
+                    <h2>
+                        <button
+                            x-on:click="expanded = !expanded"
+                            :aria-expanded="expanded"
+                            class="flex w-full items-center justify-between px-6 py-4 text-xl"
+                        >
+                            <span>Installation</span>
+                            <span x-show="expanded" aria-hidden="true" class="ml-4">&minus;</span>
+                            <span x-show="!expanded" aria-hidden="true" class="ml-4">&plus;</span>
+                        </button>
+                    </h2>
+
+                    <div x-show="expanded" x-collapse>
+                        <div class="px-6 pb-4">
+                            <p class="mb-2">For installation of the php sdk simply run the composer command:</p>
+<pre>
+<code class="language-shell">
+composer require walletapp/php-sdk
+</code>
+</pre>
+                        <p>This SDK integrates the WalletApp public Api's an serves an easy to use Class based integration.</p>
+                        <br>
+                        <p>
+                            Make sure the API_KEY environment variable is set. Other wise pass the API key on each Class initialization, this can be done as follows:
+                        </p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Brands;
+$brands = new Brands('YOUR_API_KEY');
+
+// submit your request
+...
+</code>
+</pre>
+                    </div>
+                    </div>
+                </div>
+
+                <div x-data="{
+                    id: 2,
+                    get expanded() {
+                        return this.active === this.id
+                    },
+                    set expanded(value) {
+                        this.active = value ? this.id : null
+                    },
+                }" role="region" class="bg-white">
+                    <h2>
+                        <button
+                            x-on:click="expanded = !expanded"
+                            :aria-expanded="expanded"
+                            class="flex w-full items-center justify-between px-6 py-4 text-xl"
+                        >
+                            <span>Authentication</span>
+                            <span x-show="expanded" aria-hidden="true" class="ml-4">&minus;</span>
+                            <span x-show="!expanded" aria-hidden="true" class="ml-4">&plus;</span>
+                        </button>
+                    </h2>
+
+                    <div x-show="expanded" x-collapse>
+                        <div class="px-6 pb-4">
+                            <p>The authentication class is the only class that does not need an api key to be able to handle requests.</p>
+                            <br>
+                            <p>It is used to generate an access token that can be used to make requests to the other classes.</p>
+                            <br>
+                            <p>It contains the following methods</p>
+                            <ul>
+                                <li>login()</li>
+                                <li>token()</li>
+                                <li>scopes()</li>
+                            </ul>
+                            <hr class="my-2">
+                            <h2 class="mt-4">Login</h2>
+                            <p>The login method is used to login a member with their dashboard credentials</p>
+                            <p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Authentication;
+$auth = new Authentication();
+
+// login the user
+$auth->login(['email' => '<email>', 'password' => '<password>']);
+</code>
+</pre>
+<hr class="my-2">
+                            <h2 class="mt-4">Token</h2>
+                            <p>The token method is used fetch an api key which will be used for future requests</p>
+                            <p class="mb-4">It can be used as follows:</p>
+                           
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Authentication;
+$auth = new Authentication();
+
+// request a token
+$auth->token(['email' => '<email>', 'password' => '<password>', 'permissions' => '<scope>']);
+</code>
+</pre>
+<hr class="my-2">
+                            <h2 class="mt-4">Scopes</h2>
+                            <p>The scopes method is used fetch a list of requestable permissions for an api key</p>
+                            <p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Authentication;
+$auth = new Authentication();
+
+// fetch your scopes
+$auth->scopes();
+</code>
+</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div x-data="{
+                    id: 3,
+                    get expanded() {
+                        return this.active === this.id
+                    },
+                    set expanded(value) {
+                        this.active = value ? this.id : null
+                    },
+                }" role="region" class="bg-white">
+                    <h2>
+                        <button
+                            x-on:click="expanded = !expanded"
+                            :aria-expanded="expanded"
+                            class="flex w-full items-center justify-between px-6 py-4 text-xl"
+                        >
+                            <span>Brands</span>
+                            <span x-show="expanded" aria-hidden="true" class="ml-4">&minus;</span>
+                            <span x-show="!expanded" aria-hidden="true" class="ml-4">&plus;</span>
+                        </button>
+                    </h2>
+
+                    <div x-show="expanded" x-collapse>
+                        <div class="px-6 pb-4">
+
+                            <p>The Brands class Allows you to fetch the required brand data for your integration</p>
+                            <br>
+                            <p>It contains the following methods</p>
+                            <ul>
+                                <li>get()</li>
+                            </ul>
+                            <h2 class="mt-4">get</h2>
+                            <p>This method returns allow brands for the authenticated user</p>
+                            <p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Brands;
+$brands = new Brands();
+
+// fetch your brands
+$brands->get();
+</code>
+</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div x-data="{
+                    id: 4,
+                    get expanded() {
+                        return this.active === this.id
+                    },
+                    set expanded(value) {
+                        this.active = value ? this.id : null
+                    },
+                }" role="region" class="bg-white">
+                    <h2>
+                        <button
+                            x-on:click="expanded = !expanded"
+                            :aria-expanded="expanded"
+                            class="flex w-full items-center justify-between px-6 py-4 text-xl"
+                        >
+                            <span>Members</span>
+                            <span x-show="expanded" aria-hidden="true" class="ml-4">&minus;</span>
+                            <span x-show="!expanded" aria-hidden="true" class="ml-4">&plus;</span>
+                        </button>
+                    </h2>
+
+                    <div x-show="expanded" x-collapse>
+                        <div class="px-6 pb-4">
+                            <p>The Members class Allows import members, fetch import log data and the latest member changes</p>
+                            <br>
+                            <p>It contains the following methods</p>
+                            <ul>
+                                <li>brand()</li>
+                                <li>search()</li>
+                                <li>logs()</li>
+                                <li>export()</li>
+                                <li>import()</li>
+                            </ul>
+                            <hr class="my-2">
+
+                            <h2 class="mt-4">Brand</h2>
+                            <p>This is a chainable method to set the brand that we are going to work with</p>
+                            <p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Members;
+$members = new Members();
+
+// set the brand
+$members->brand('brand_id')->search();
+
+</code>
+</pre>
+<hr class="my-2">
+                            <h2 class="mt-4">Search <a class="underline text-sky-500" href="https://dev.walletapp.co/docs/members-search">API</a> </h2>
+                            <p>This method a specific member for the specified brand</p>
+                            <p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Members;
+$members = new Members();
+
+// search for a member
+$members->brand('brand_id')->search(['email' => '<email>']);
+</code>
+</pre>
+<hr class="my-2">
+
+<h2 class="mt-4">Logs <a class="underline text-sky-500" href="https://dev.walletapp.co/docs/member-log">API</a> </h2>
+<p>This method returns the logs for the latest members that were imported</p>
+<p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Members;
+$members = new Members();
+
+// fetch the import logs
+$members->brand('brand_id')->logs();
+</code>
+</pre>
+<hr class="my-2">
+
+<h2 class="mt-4">Export <a class="underline text-sky-500" href="https://dev.walletapp.co/docs/member-export">API</a></h2>
+<p>This exports the member for the specified brand and storecard</p>
+<p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Members;
+
+$members = new Members();
+// export the members
+
+$members->brand('brand_id')->export(['storecard' => '<storecard>']);
+</code>
+</pre>
+<hr class="my-2">
+
+<h2 class="mt-4">Import <a class="underline text-sky-500" href="https://dev.walletapp.co/docs/member-import">API</a></h2>
+<p>This imports the member for the specified brand</p>
+<p class="mb-4">It can be used as follows:</p>
+<pre>
+<code class="language-php">
+// Your php file
+use Clients\Members;
+
+$members = new Members();
+
+// import the members
+$members->brand('brand_id')->import(['members' => $members]);
+
+</code>
+</pre>
+
+</div>
+                    </div>
+                </div>
+            </div>
+      </div>
+</body>
+</html>

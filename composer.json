@@ -1,0 +1,15 @@
+{
+    "name": "walletapp/php-sdk",
+    "autoload": {
+        "psr-4": {
+            "WalletApp\\Support\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WouterLagerwerf",
+            "email": "43637154+WouterLagerwerf@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
