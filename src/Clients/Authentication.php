@@ -100,7 +100,7 @@ class Authentication extends Core
 
     public function scopes()
     {
-        return array_keyxs($this->ABILITIES);
+        return array_keys($this->ABILITIES);
     }
 
     private function getPermissions($string)
