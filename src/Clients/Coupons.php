@@ -2,6 +2,8 @@
 
 namespace WalletApp\Support\Clients;
 
+use Walletapp\Support\Clients\Core;
+
 class Coupons extends Core
 {
     public function get()

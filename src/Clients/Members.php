@@ -2,7 +2,7 @@
 
 namespace WalletApp\Support\Clients;
 
-use Clients\Core;
+use Walletapp\Support\Clients\Core;
 
 class Members extends Core
 {

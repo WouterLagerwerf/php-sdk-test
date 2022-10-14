@@ -2,7 +2,7 @@
 
 namespace WalletApp\Support\Clients;
 
-use Clients\HttpClient;
+use Walletapp\Support\Clients\HttpClient;
 
 class Core
 {
