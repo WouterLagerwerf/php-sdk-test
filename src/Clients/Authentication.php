@@ -2,7 +2,7 @@
 
 namespace WalletApp\Support\Clients;
 
-use Walletapp\Support\Clients\Core;
+use WalletApp\Support\Clients\Core;
 
 class Authentication extends Core
 {
